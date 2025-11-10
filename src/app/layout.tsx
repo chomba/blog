@@ -1,7 +1,6 @@
 import { apiPlugin } from "@storyblok/react";
 import StoryblokProvider from "../components/StoryblokProvider";
 import "./layout.css"
-import { components } from "@/components/registry";
 import { storyblokInit } from "@storyblok/react/ssr";
 
 // export const getStoryblokApi = storyblokInit({

@@ -1,4 +1,4 @@
-import { components } from '@/components/registry';
+import { Post } from '@/components/Post';
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc';
 
 // export const getStoryblokApi = storyblokInit({
@@ -11,10 +11,12 @@ import { apiPlugin, storyblokInit } from '@storyblok/react/rsc';
 
 export const getStoryblokApi = storyblokInit({
   use: [apiPlugin],
-  components: components,
+  components: {
+    post: Post
+  },
   apiOptions: {
-    region: 'eu',
+    region: 'eu'
   },
   bridge: true,
-  accessToken: process.env.NEXT_PUBLIC_STORYBLOK_TOKEN
+  accessToken: process.env.NEXT_PUBLIC_STORYBLOK_TOKEN ?? "NONE",
 });

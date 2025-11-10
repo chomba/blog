@@ -1,6 +1,6 @@
-import { StoryblokStory, useStoryblokBridge } from "@storyblok/react/rsc";
-import { resolveVersion } from "@/api/helpers";
-import api from "@/api/management";
+import { StoryblokServerComponent, StoryblokStory } from "@storyblok/react/rsc";
+import { resolveVersion } from "@/lib/helpers";
+import api from "@/lib/management";
 // import { getStoryblokApi } from "@storyblok/react/rsc";
 import { getStoryblokApi } from "@/lib/storyblok";
 

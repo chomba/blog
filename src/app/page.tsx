@@ -1,4 +1,4 @@
-import api from "@/api/management";
+import api from "@/lib/management";
 import { LatestPosts } from "@/components/LatestPosts";
 import { getStoryblokApi } from "@/lib/storyblok";
 // import { storyblokApi } from "@/api/storyblok";
@@ -9,7 +9,6 @@ export default async function HomePage() {
 
   const veryLatest = await api.posts().veryLatest();
   if (!veryLatest) {
-    console.log("not found");
     return; // Perhaps display No posts have been published yet page
   }
   

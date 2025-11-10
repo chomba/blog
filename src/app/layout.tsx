@@ -4,15 +4,15 @@ import "./layout.css"
 import { components } from "@/components/registry";
 import { storyblokInit } from "@storyblok/react/ssr";
 
-export const getStoryblokApi = storyblokInit({
-  use: [apiPlugin],
-  components: components,
-  apiOptions: {
-    region: 'eu',
-  },
-  bridge: true,
-  accessToken: process.env.STORYBLOK_TOKEN
-});
+// export const getStoryblokApi = storyblokInit({
+//   use: [apiPlugin],
+//   components: components,
+//   apiOptions: {
+//     region: 'eu',
+//   },
+//   bridge: true,
+//   accessToken: process.env.STORYBLOK_TOKEN
+// });
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {  
   return (

@@ -3,7 +3,7 @@
 // Note: Component Registration is not required on the client side
 
 "use client"
-import { apiPlugin, storyblokInit } from "@storyblok/react"
+import { apiPlugin, storyblokInit } from "@storyblok/react/rsc"
 
 export const initStoryblokClient = () => {
     storyblokInit({

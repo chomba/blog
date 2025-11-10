@@ -5,7 +5,7 @@ import "./layout.css"
 import { ownFetch } from "@/utils";
 
 storyblokInit({
-  accessToken: process.env.STORYBLOK_TOKEN,
+  accessToken: process.env.STORYBLOK_PREVIEW_TOKEN,
   use: [apiPlugin],
   apiOptions: {
     region: 'eu',

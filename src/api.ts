@@ -85,8 +85,6 @@ export class Query<T> {
         await this.setup();
         this.storiesParams.sort_by = "first_published_at:desc";
         this.storiesParams.per_page = count;
-        console.log(this.config);
-        console.log(this.storiesParams);
 
         const client = new StoryblokClient(this.config);
         const response = await client.getStories(this.storiesParams);
@@ -118,6 +116,7 @@ export class Query<T> {
     async slug(slug: string) {
         await this.setup();
         const client = new StoryblokClient(this.config);
+        console.log(`Getting slug: ${slug}`);
         const response  = await client.getStory(`${this.path}${slug}`, this.storyParams);
         return response.data.story as T;
     }

@@ -5,21 +5,21 @@ import { draftMode } from "next/headers";
 export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const secret = searchParams.get("secret");
-    const slug = searchParams.get("slug")
+    let slug = searchParams.get("slug");
 
     if (secret != process.env.DRAFT_MODE_SECRET) {
         return new Response("Invalid Token", { status: 401 });
     }
 
-    if (!slug) {
-        return new Response("You must provide a slug as a query paramenter", { status: 401 });
-    }
-
-    const post = await api.root().slug(slug);
+    // if (!slug) {
+    //     return new Response("You must provide a slug as a query paramenter", { status: 401 });
+    // }
+    const post = slug ? await api.root().slug(slug) : await api.root().slug("home");
     if (!post) {
         return new Response("You must provide a valid slug", { status: 401 });
     }
     const draft = await draftMode();
     draft.enable();
-    redirect(post.full_slug);
+    console.log(`FULL SLUG: ${post.full_slug}`);
+    redirect(post.full_slug != "home" ? post.full_slug : "/");
 }

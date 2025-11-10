@@ -2,7 +2,7 @@ import { StoryblokServerRichText } from "@storyblok/react/rsc";
 import "./Post.css"
 import { storyblokEditable } from "@storyblok/react/rsc";
 
-export default function Post({ blok, preview, slug }: { blok: any, preview: boolean, slug: string }) {
+export function Post({ blok, preview, slug }: { blok: any, preview: boolean, slug: string }) {
     console.log("blok:");
     console.log(blok);
 

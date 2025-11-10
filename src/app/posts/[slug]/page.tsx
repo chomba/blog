@@ -1,6 +1,7 @@
-import { getStoryblokApi, StoryblokStory } from "@storyblok/react/rsc";
+import { StoryblokStory } from "@storyblok/react/rsc";
 import api from "@/api";
 import { AuthContext } from "@/utils";
+import { storyblokApi } from "@/api/storyblok";
 
 // TBD: change latest to all
 export const generateStaticParams = async () => {
@@ -8,6 +9,7 @@ export const generateStaticParams = async () => {
 };
 
 export default async function PostPage({ params }: { params: Promise<{ slug: string }>}) {
+    storyblokApi();
     let ctx: AuthContext = {
         loggedInUser: {
             firstName: "Jhon",
@@ -16,7 +18,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             id: "x-x-x-x-1"
         }
     };
-    // const client = getStoryblokApi();
+
     // check if draft mode is enabled
     const { slug } = await params;
     const post = await api.posts().slug(slug);

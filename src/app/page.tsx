@@ -1,20 +1,10 @@
-// import { StoryblokStory } from "@storyblok/react/rsc";
-// import posts from "@/model/posts";
-import type { Post } from "@/models";
 import api from "@/api";
 import { LatestPosts } from "@/components/LatestPosts";
+import { storyblokApi } from "@/api/storyblok";
 import { StoryblokStory } from "@storyblok/react/rsc";
-import { AuthContext } from "@/utils";
 
 export default async function HomePage() {
-  const ctx: AuthContext = {
-    loggedInUser: {
-      firstName: "Jhon",
-      lastName: "Smith",
-      email: "jhon@smith.com",
-      id: "x-x-x-x-1"
-    }
-  };
+  storyblokApi();
 
   const veryLatest = await api.posts().veryLatest();
   if (!veryLatest) {

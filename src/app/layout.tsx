@@ -1,18 +1,5 @@
-import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "../components/StoryblokProvider";
-import Post from "../components/Post";
 import "./layout.css"
-import { ownFetch } from "@/utils";
-
-storyblokInit({
-  accessToken: process.env.STORYBLOK_PREVIEW_TOKEN,
-  use: [apiPlugin],
-  apiOptions: {
-    region: 'eu',
-    fetch: ownFetch
-  },
-  enableFallbackComponent: true
-});
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
   return (

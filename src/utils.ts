@@ -1,3 +1,4 @@
+import { apiPlugin, storyblokInit } from "@storyblok/react/rsc";
 import { User } from "./models";
 
 // TBD: We might want to check when the app is meant to be executed as a SSR-rendered app

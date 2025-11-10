@@ -1,4 +1,4 @@
-import { apiPlugin, storyblokInit } from "@storyblok/react/rsc";
+import { draftMode } from "next/headers";
 import { User } from "./models";
 
 // TBD: We might want to check when the app is meant to be executed as a SSR-rendered app
@@ -9,15 +9,14 @@ export const ownFetch = (input: any, init?: any): Promise<Response> => {
   });
 };
 
-// export const noStoreFetch = (input: any, init?: any): Promise<Response> => {
-//   return fetch(input, {
-//     ...init,
-//     cache: "no-store"
-//   });
-// };
+export async function resolveVersion() {
+    const { isEnabled } = await draftMode();
+    return isEnabled ? "draft" : "published" as StoryVersion;
+}
+
+export type StoryVersion = "draft" | "published";
 
 export interface AuthContext {
     loggedInUser: User | undefined
 }
 
-export type StoryVersion = "draft" | "published";

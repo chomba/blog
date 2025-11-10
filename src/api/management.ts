@@ -1,17 +1,17 @@
 import StoryblokClient, { ISbConfig, ISbStoriesParams, ISbStoryData, ISbStoryParams } from "storyblok-js-client";
-import { Post } from "./models";
-import { ownFetch, StoryVersion } from "./utils";
 import { draftMode } from "next/headers";
+import { ownFetch, StoryVersion } from "./helpers";
+import { Post } from "./models";
 
 enum SbPath {
     Post = "posts/",
     Root = ""
 }
 
-export async function getVersion() {
-    const { isEnabled } = await draftMode();
-    return isEnabled ? "draft" : "published" as StoryVersion;
-}
+// export async function getVersion() {
+//     const { isEnabled } = await draftMode();
+//     return isEnabled ? "draft" : "published" as StoryVersion;
+// }
 
 export class Query<T> {
     private readonly path?: SbPath;
@@ -120,16 +120,6 @@ export class Query<T> {
         const response  = await client.getStory(`${this.path}${slug}`, this.storyParams);
         return response.data.story as T;
     }
-
-    // async function getAllPosts(version: StoryVersion = ) {
-    //     const payload: ISbStoriesParams = { 
-    //         version: env_version,
-    //         by_slugs: "posts/*",
-    //         cv: Date.now()
-    //     };
-    //     const response = await client.getStories(payload);
-    //     return response.data.stories as Post[]
-    // }
 
 }
 

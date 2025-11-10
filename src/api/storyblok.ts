@@ -10,6 +10,7 @@ const opts: SbReactSDKOptions = {
   components: {
     post: Post
   },
+  bridge: true
   // apiOptions: {
   //   region: 'eu',
   // },

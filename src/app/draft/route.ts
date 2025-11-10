@@ -1,4 +1,4 @@
-import api from "@/api";
+import api from "@/api/management";
 import { redirect } from "next/navigation";
 import { draftMode } from "next/headers";
 import { NextRequest } from "next/server";

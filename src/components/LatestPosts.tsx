@@ -1,4 +1,4 @@
-import type { Post, StoryblokAsset } from "@/models";
+import type { Post, StoryblokAsset } from "@/api/models";
 import "./LatestPosts.css";
 import { StoryblokStory } from "@storyblok/react/rsc";
 import { CSSProperties } from "react";

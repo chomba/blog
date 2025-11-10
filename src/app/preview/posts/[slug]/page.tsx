@@ -1,15 +1,22 @@
-import { StoryblokServerComponent, StoryblokStory } from "@storyblok/react/rsc";
+import api from "@/lib/management";
+import { StoryblokStory } from "@storyblok/react/rsc";
 import { resolveVersion } from "@/lib/helpers";
 import { getStoryblokApi } from "@/lib/storyblok";
+import { draftMode } from "next/headers";
 
+export const generateStaticParams = async () => {
+    return (await api.posts().published().latest(100)).map(post => ({ slug: post.slug }));
+};
 export default async function PostPage({ params }: { params: Promise<{ slug: string }>}) {
+    // const draft = await draftMode();
+    // draft.enable();
     const client = getStoryblokApi();
-    const version = await resolveVersion();
+    // const version = await resolveVersion();
 
     const { slug } = await params;
-    const post = await client.getStory(`posts/${slug}`, {
-        version: version
-    });
-    // const post = await api.posts().slug(slug);
-    return <StoryblokStory story={post.data.story} slug={post.data.story.full_slug} />;
+    // const post = await client.getStory(`posts/${slug}`, {
+    //     version: "draft"
+    // });
+    const post = await api.posts().slug(slug);
+    return <StoryblokStory story={post} slug={post.full_slug} />;
 }

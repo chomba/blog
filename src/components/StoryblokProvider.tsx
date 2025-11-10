@@ -6,7 +6,9 @@ import Post from "./Post";
 
 // Client-Side blok init params only
 storyblokInit({
-  components: { },
+  components: { 
+    post: Post
+  },
   enableFallbackComponent: true
 });
 

@@ -11,9 +11,6 @@ storyblokInit({
     region: 'eu',
     fetch: ownFetch
   },
-  components: {
-    post: Post
-  },
   enableFallbackComponent: true
 });
 

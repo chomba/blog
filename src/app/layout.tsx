@@ -3,7 +3,7 @@ import "./layout.css"
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {  
   return (
-    <StoryblokProvider>
+  
       <html lang="en">
         <head>
           <title>Juan Chomba | Notes on Code and Technology</title>
@@ -76,6 +76,6 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
           </footer>
         </body>
       </html>
-    </StoryblokProvider>
+
   );
 }

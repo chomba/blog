@@ -1,0 +1,57 @@
+/* @import "tailwindcss"; */
+
+:root { 
+  --color-light-blue: #c8e5fb;
+  --section-large-width: 960px;
+
+  --article-width: 755px;
+  --page-width: 1140px;
+  --page-width-narrow: 540px;
+
+  --font-text: 'Teachers', 'NimbusSansD', 'Fakt Pro', 'URW Geometric', 'URWGrotesk', 'RooneySans', serif;
+  --font-headline: 'DM Sans', 'URW Geometric', 'Nimbus Sans D OT', 'Futura PT', sans-serif;
+  --font-code: 'ApercuMono', 'consolas', monospace;
+
+  --body-width: 760px;
+  --side-width: calc(var(--page-width) - var(--body-width));
+  --cover-width: 1200px;
+  --view-width: ~"calc(100vw - 17px)";
+  --light-blue-color: #A6DCF3;
+  --smartphones: ~"only screen and (max-width: 480px)";
+  --smartphones-portrait: ~"only screen and (min-width: 481px) and (max-width: 600px)";
+  --tablets: ~"only screen (min-width: 601px) and (max-width: 800px)";
+  --tablets-portrait: ~"only screen and (min-width: 801px) and (max-width: 1300px)";
+  --highlight-color: #FFF59D;
+
+  --content-width-narrower: 370px;
+  --content-width-narrow: 650px;
+  --content-width: 1080px;
+  --max-page-width: 1920px;
+  --blue-color: #005fb3;
+  --yellow-color: #FFEA00;
+  --red-color: #E70051;
+
+  --header-height: 60px;
+}
+
+/* @theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+ */
+

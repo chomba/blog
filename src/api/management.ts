@@ -1,6 +1,6 @@
 import StoryblokClient, { ISbConfig, ISbStoriesParams, ISbStoryData, ISbStoryParams } from "storyblok-js-client";
 import { draftMode } from "next/headers";
-import { ownFetch, StoryVersion } from "./helpers";
+import { ownFetch, resolveVersion, StoryVersion } from "./helpers";
 import { Post } from "./models";
 
 enum SbPath {
@@ -24,34 +24,19 @@ export class Query<T> {
             cv: Date.now()
         }
         this.config = {
-            accessToken: process.env.STORYBLOK_PUBLIC_TOKEN,
+            accessToken: process.env.STORYBLOK_TOKEN,
             fetch: ownFetch
         };
     }
 
     private set version(version: StoryVersion) {
         this.storyParams.version = this.storiesParams.version = version;
-        if (version == "draft") {
-            this.config.accessToken = process.env.STORYBLOK_PREVIEW_TOKEN;
-        }
-        if (version == "published") {
-            this.config.accessToken = process.env.STORYBLOK_PUBLIC_TOKEN;
-        }
     }
 
     private async setup() {
         if (this.storyParams.version)
             return;
-
-        // TBD: If env.ADMIN_UI=enabled then also enable draft version
-        if (process.env.NODE_ENV == "development") {
-            this.version = "draft"
-            return;
-        } 
-
-        const { isEnabled } = await draftMode();
-        this.version = isEnabled ? "draft" : "published";
-        
+        this.version = await resolveVersion();        
     }
 
     published() {

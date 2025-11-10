@@ -1,7 +1,8 @@
 import { StoryblokStory, useStoryblokBridge } from "@storyblok/react/rsc";
-import { storyblokApi } from "@/api/storyblok";
+// import { storyblokApi } from "@/api/storyblok";
 import { resolveVersion } from "@/api/helpers";
 import api from "@/api/management";
+import { getStoryblokApi } from "@storyblok/react/rsc";
 
 // TBD: change latest to all
 export const generateStaticParams = async () => {
@@ -9,7 +10,7 @@ export const generateStaticParams = async () => {
 };
 
 export default async function PostPage({ params }: { params: Promise<{ slug: string }>}) {
-    const client = storyblokApi(); // Register components and loads the Storyblok bridge
+    const client = getStoryblokApi();
     const version = await resolveVersion();
 
     const { slug } = await params;

@@ -1,7 +1,27 @@
+import { apiPlugin, SbReactSDKOptions } from "@storyblok/react";
 import StoryblokProvider from "../components/StoryblokProvider";
 import "./layout.css"
+import { components } from "@/components/registry";
+import { resolveVersion } from "@/api/helpers";
+import { storyblokInit } from "@storyblok/react/ssr";
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
+
+const opts: SbReactSDKOptions = {
+  use: [apiPlugin],
+  components: components,
+  apiOptions: {
+    region: 'eu',
+  },
+  bridge: true
+};
+
+console.log(">>>> running on the server:")  
+const version = await resolveVersion();
+opts.accessToken = version === "draft" ? process.env.STORYBLOK_PREVIEW_TOKEN : process.env.STORYBLOK_PUBLIC_TOKEN;
+storyblokInit(opts);
+
+
+export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {  
   return (
     <StoryblokProvider>
       <html lang="en">

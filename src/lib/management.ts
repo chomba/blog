@@ -24,7 +24,7 @@ export class Query<T> {
             cv: Date.now()
         }
         this.config = {
-            accessToken: process.env.NEXT_PUBLIC_STORYBLOK_TOKEN,
+            accessToken: process.env.NEXT_PUBLIC_STORYBLOK_PREVIEW_TOKEN,
             fetch: ownFetch
         };
     }

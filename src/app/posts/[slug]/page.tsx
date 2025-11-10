@@ -1,7 +1,6 @@
 import { StoryblokServerComponent, StoryblokStory } from "@storyblok/react/rsc";
 import { resolveVersion } from "@/lib/helpers";
 import api from "@/lib/management";
-// import { getStoryblokApi } from "@storyblok/react/rsc";
 import { getStoryblokApi } from "@/lib/storyblok";
 
 // TBD: change latest to all

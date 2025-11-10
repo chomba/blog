@@ -1,17 +1,5 @@
-import { apiPlugin } from "@storyblok/react";
 import StoryblokProvider from "../components/StoryblokProvider";
 import "./layout.css"
-import { storyblokInit } from "@storyblok/react/ssr";
-
-// export const getStoryblokApi = storyblokInit({
-//   use: [apiPlugin],
-//   components: components,
-//   apiOptions: {
-//     region: 'eu',
-//   },
-//   bridge: true,
-//   accessToken: process.env.STORYBLOK_TOKEN
-// });
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {  
   return (

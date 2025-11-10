@@ -4,7 +4,7 @@ import { storyblokApi } from "@/api/storyblok";
 import { StoryblokStory } from "@storyblok/react/rsc";
 
 export default async function HomePage() {
-  storyblokApi();
+  storyblokApi(); // registers the components
 
   const veryLatest = await api.posts().veryLatest();
   if (!veryLatest) {

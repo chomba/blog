@@ -1,8 +1,9 @@
 import api from "@/api";
 import { redirect } from "next/navigation";
 import { draftMode } from "next/headers";
+import { NextRequest } from "next/server";
 
-export async function GET(request: Request) {
+export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const secret = searchParams.get("secret");
     let slug = searchParams.get("slug");

@@ -48,7 +48,7 @@ export class Query<T> {
         if (this.storyParams.version)
             return;
 
-        // Get draft stories in development environment
+        // TBD: If env.ADMIN_UI=enabled then also enable draft version
         if (process.env.NODE_ENV == "development") {
             this.version = "draft"
             return;

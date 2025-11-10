@@ -1,5 +1,6 @@
 import { StoryblokServerRichText } from "@storyblok/react/rsc";
 import "./Post.css"
+import { storyblokEditable } from "@storyblok/react/rsc";
 
 export default function Post({ blok, preview, slug }: { blok: any, preview: boolean, slug: string }) {
     console.log("blok:");
@@ -14,7 +15,7 @@ export default function Post({ blok, preview, slug }: { blok: any, preview: bool
     })} - ${created_at.toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit" })}`;
 
     return (
-        <div className={["post-wrapper", preview ? "preview" : ""].join(" ")}>
+        <div className={["post-wrapper", preview ? "preview" : ""].join(" ")} {...storyblokEditable(blok)}>
             <div className="container full post-cover">
                 <div className="container inner post-header">
                     <div className="post-titles">

@@ -8,11 +8,6 @@ enum SbPath {
     Root = ""
 }
 
-// export async function getVersion() {
-//     const { isEnabled } = await draftMode();
-//     return isEnabled ? "draft" : "published" as StoryVersion;
-// }
-
 export class Query<T> {
     private readonly path?: SbPath;
     private storiesParams: ISbStoriesParams;

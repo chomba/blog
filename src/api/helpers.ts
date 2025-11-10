@@ -9,9 +9,11 @@ export const ownFetch = (input: any, init?: any): Promise<Response> => {
   });
 };
 
-export async function resolveVersion() {
+export async function resolveVersion(): Promise<StoryVersion> {
+    if (process.env.NODE_ENV === "development")
+        return "draft";
     const { isEnabled } = await draftMode();
-    return isEnabled ? "draft" : "published" as StoryVersion;
+    return isEnabled ? "draft" : "published";
 }
 
 export type StoryVersion = "draft" | "published";

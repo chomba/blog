@@ -1,6 +1,6 @@
 import StoryblokClient, { ISbConfig, ISbStoriesParams, ISbStoryData, ISbStoryParams } from "storyblok-js-client";
 import { draftMode } from "next/headers";
-import { ownFetch, resolveVersion, StoryVersion } from "./helpers";
+import { ownFetch, StoryVersion } from "./helpers";
 import { Post } from "./models";
 
 enum SbPath {
@@ -36,7 +36,8 @@ export class Query<T> {
     private async setup() {
         if (this.storyParams.version)
             return;
-        this.version = await resolveVersion();        
+        this.version = "published"; // Default Value
+        // this.version = await resolveVersion();        
     }
 
     published() {

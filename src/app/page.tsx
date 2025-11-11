@@ -1,11 +1,11 @@
 import api from "@/lib/management";
 import { LatestPosts } from "@/components/LatestPosts";
-import { getStoryblokApi } from "@/lib/storyblok";
+// import { getStoryblokApi } from "@/lib/storyblok";
 // import { storyblokApi } from "@/api/storyblok";
 import { StoryblokStory } from "@storyblok/react/rsc";
 
 export default async function HomePage() {
-  getStoryblokApi(); // registers the components
+  // getStoryblokApi(); // registers the components
 
   const veryLatest = await api.posts().veryLatest();
   if (!veryLatest) {

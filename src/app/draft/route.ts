@@ -15,12 +15,12 @@ export async function GET(request: NextRequest) {
     // if (!slug) {
     //     return new Response("You must provide a slug as a query paramenter", { status: 401 });
     // }
-    const post = slug ? await api.root().slug(slug) : await api.root().slug("home");
+    const post = slug ? await api.root().draft().slug(slug) : await api.root().draft().slug("home");
     if (!post) {
         return new Response("You must provide a valid slug", { status: 401 });
     }
-    const draft = await draftMode();
-    draft.enable();
-    console.log(`FULL SLUG: ${post.full_slug}`);
+    // const draft = await draftMode();
+    // draft.enable();
+    // console.log(`FULL SLUG: ${post.full_slug}`);
     redirect(post.full_slug != "home" ? post.full_slug : "/");
 }

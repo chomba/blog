@@ -1,10 +1,6 @@
 "use server"
-
 import { Post } from '@/components/Post';
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc';
-
-// Evaluate if moving it to the layout file is a better option
-// Component registration is required here
 
 const initStoryblokClientOnServer = () => {
   return storyblokInit({
@@ -21,5 +17,3 @@ const initStoryblokClientOnServer = () => {
 }
 
 export { initStoryblokClientOnServer }
-
-// export const getStoryblokApi = 

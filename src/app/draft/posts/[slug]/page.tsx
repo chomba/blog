@@ -1,4 +1,4 @@
-import api from "@/lib/management";
+import api from "@/lib/api";
 import { StoryblokStory } from "@storyblok/react/rsc";
 import { notFound } from "next/navigation";
 

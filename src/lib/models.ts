@@ -1,5 +1,7 @@
 import { ISbStoryData } from "storyblok-js-client";
 
+export type StoryVersion = "draft" | "published";
+
 export type StoryblokAsset = {
     id: string,
     filename: string
@@ -17,8 +19,8 @@ export type Post = ISbStoryData<{
     featured?: boolean
 }>;
 
-
-// Bound to SQLite Table - users(uuid, firstName, lastName, email, secret)
+// TBD: Implement Simple Hash-bash Auth 
+// for editors on a custom admin UI
 export interface User {
     id: string,
     firstName: string,

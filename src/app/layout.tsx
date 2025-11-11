@@ -1,20 +1,6 @@
-import { apiPlugin, storyblokInit } from "@storyblok/react/rsc";
 import StoryblokProvider from "../components/StoryblokProvider";
 import "./layout.css"
-import { Post } from "@/components/Post";
 import { initStoryblokClientOnServer } from "@/lib/storyblok";
-
-// storyblokInit({
-//   use: [apiPlugin],
-//   components: {
-//     post: Post
-//   },
-//   apiOptions: {
-//     region: 'eu'
-//   },
-//   bridge: true,
-//   accessToken: process.env.NEXT_PUBLIC_STORYBLOK_PREVIEW_TOKEN
-// });
 
 initStoryblokClientOnServer();
 

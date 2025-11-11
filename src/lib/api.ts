@@ -1,7 +1,6 @@
 import StoryblokClient, { ISbConfig, ISbStoriesParams, ISbStoryData, ISbStoryParams } from "storyblok-js-client";
-import { draftMode } from "next/headers";
-import { ownFetch, StoryVersion } from "./helpers";
-import { Post } from "./models";
+import { ownFetch } from "./helpers";
+import { Post, StoryVersion } from "./models";
 
 enum SbPath {
     Post = "posts/",
@@ -36,8 +35,7 @@ export class Query<T> {
     private async setup() {
         if (this.storyParams.version)
             return;
-        this.version = "published"; // Default Value
-        // this.version = await resolveVersion();        
+        this.version = "published"; // Default Mode   
     }
 
     published() {
@@ -97,7 +95,6 @@ export class Query<T> {
     async slug(slug: string) {
         await this.setup();
         const client = new StoryblokClient(this.config);
-        console.log(`Getting slug: ${slug}`);
         const response  = await client.getStory(`${this.path}${slug}`, this.storyParams);
         return response.data.story as T;
     }

@@ -1,4 +1,4 @@
-import api from "@/lib/management";
+import api from "@/lib/api";
 import { LatestPosts } from "@/components/LatestPosts";
 // import { getStoryblokApi } from "@/lib/storyblok";
 // import { storyblokApi } from "@/api/storyblok";

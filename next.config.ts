@@ -1,12 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  /* Storyblok Visual Editor URL doesn't support variables  
+   * it can only append the slug so we're using a rewrite to map the secret
+   */
   async rewrites() {
     return [
       {
         source: '/preview/:secret/posts/:slug',
-        destination: '/posts/:slug?secret=:secret'
+        destination: '/posts/:slug/:secret'
       }
     ]
   },

@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "src/app/preview/posts/[slug]/layout.tsx"  ],
+, "src/app/test/posts/[...slug]/layout.tsx"  ],
   "exclude": ["node_modules"]
 }

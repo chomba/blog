@@ -4,15 +4,17 @@ import { notFound } from "next/navigation";
 
 export const generateStaticParams = async () => {
     const posts = (await api.posts().published().latest(100));
-    const draftSlugs = posts.map(post => ({ 
-        slug: [post.slug, process.env.DRAFT_MODE_SECRET] 
-    }));
+
+    // const draftSlugs = posts.map(post => ({ 
+    //     slug: [post.slug, process.env.DRAFT_MODE_SECRET] 
+    // }));
 
     const publishedSlugs = posts.map(post => ({ 
         slug: [post.slug, ""] 
     }));
 
-    return [...draftSlugs, ...publishedSlugs];
+    return publishedSlugs;
+    // return [...draftSlugs, ...publishedSlugs];
 };
 
 export default async function PostPage({ params }: { params: Promise<{ slug: string[] }> }) {

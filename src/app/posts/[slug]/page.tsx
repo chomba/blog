@@ -1,4 +1,4 @@
-import { StoryblokServerComponent, StoryblokStory } from "@storyblok/react/rsc";
+import { StoryblokStory } from "@storyblok/react/rsc";
 import { resolveVersion } from "@/lib/helpers";
 import api from "@/lib/management";
 import { getStoryblokApi } from "@/lib/storyblok";

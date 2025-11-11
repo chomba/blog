@@ -15,7 +15,7 @@ export function Post({ blok, preview, slug }: { blok: any, preview: boolean, slu
     })} - ${created_at.toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit" })}`;
 
     return (
-        <div {...storyblokEditable(blok)} className={["post-wrapper", preview ? "preview" : ""].join(" ")}>
+        <div {...storyblokEditable(blok)} className={["post-wrapper", preview ? "preview" : "", "test"].join(" ")}>
             <div className="container full post-cover">
                 <div className="container inner post-header">
                     <div className="post-titles">

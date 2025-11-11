@@ -14,5 +14,5 @@ export const getStoryblokApi = storyblokInit({
     region: 'eu'
   },
   bridge: true,
-  accessToken: process.env.NODE_ENV == "production" ? process.env.STORYBLOK_PUBLIC_TOKEN : process.env.NEXT_PUBLIC_STORYBLOK_PREVIEW_TOKEN
+  accessToken: process.env.NEXT_PUBLIC_STORYBLOK_PREVIEW_TOKEN
 });

@@ -17,6 +17,6 @@ export default async function PreviewPostPage({ params }: { params: Promise<{ sl
     // const post = await client.getStory(`posts/${slug}`, {
     //     version: "draft"
     // });
-    const post = await api.posts().slug(slug);
+    const post = await api.posts().draft().slug(slug);
     return <StoryblokStory story={post} slug={post.full_slug} />;
 }

@@ -7,8 +7,8 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
-        source: '/preview/:secret/posts/:slug',
-        destination: '/posts/:slug/:secret'
+        source: '/draft/:secret/posts/:slug',
+        destination: '/draft/posts/:slug?secret=:secret'
       }
     ]
   },

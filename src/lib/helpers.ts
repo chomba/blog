@@ -5,8 +5,7 @@ import { User } from "./models";
 export const ownFetch = (input: any, init?: any): Promise<Response> => {
   return fetch(input, {
     ...init,
-    // force-cache | no-store
-    cache: process.env.NODE_ENV === "development" ? "no-store" : "no-store"
+    cache: process.env.NODE_ENV === "development" ? "no-store" : "force-cache"
   });
 };
 

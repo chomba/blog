@@ -1,4 +1,3 @@
-// "use client";
 import { StoryblokServerRichText } from "@storyblok/react/rsc";
 import "./Post.css"
 import { storyblokEditable } from "@storyblok/react/rsc";

@@ -1,3 +1,5 @@
+"use server"
+
 import { Post } from '@/components/Post';
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc';
 

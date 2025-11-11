@@ -1,8 +1,5 @@
 import api from "@/lib/management";
 import { StoryblokStory } from "@storyblok/react/rsc";
-import { resolveVersion } from "@/lib/helpers";
-import { initStoryblokClient } from "@/lib/storyblok-client";
-import { draftMode } from "next/headers";
 import { getStoryblokApi } from "@/lib/storyblok";
 
 export const generateStaticParams = async () => {
